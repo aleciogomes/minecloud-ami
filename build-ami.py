@@ -14,11 +14,11 @@ from fabric.network import disconnect_all
 #
 # Edit env defaults to customize AMI.
 #
-env.ec2_region = "us-west-2"
-env.ec2_amis = ['ami-fb68f8cb']  # Ubuntu 12.04 LTS amd64 EBS
+env.ec2_region = "sa-east-1"
+env.ec2_amis = ['ami-c114badc']  # Ubuntu 12.04 LTS amd64 EBS
 env.ec2_keypair = 'MinecraftEC2'
 env.ec2_secgroups = ['minecraft']
-env.ec2_instancetype = 'm1.small'
+env.ec2_instancetype = 't2.micro'
 env.ec2_userdata = open('cloud-config').read()
 
 
