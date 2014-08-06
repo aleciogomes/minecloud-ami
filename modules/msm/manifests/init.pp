@@ -124,6 +124,14 @@ class msm {
         require => Exec['msm_server_create'],
     }
 
+    file {'/opt/msm/servers/default/eula.txt':
+        owner   => 'minecraft',
+        group   => 'minecraft',
+        mode    => 0664,
+        content => template('msm/eula.txt'),
+        require => Exec['msm_server_create'],
+    }
+
     exec {'msm_jar':
         user    => root,
         command => "/etc/init.d/msm default jar minecraft",
